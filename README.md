@@ -1,2 +1,2 @@
 # gcode
-General purpose repository
+Container to play around with different types of languages/projects.
