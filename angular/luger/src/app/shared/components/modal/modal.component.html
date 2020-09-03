@@ -1,0 +1,24 @@
+<div class="modal">
+  <div class="container">
+    <div class="title">
+      {{ title }}
+    </div>
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
+    <div class="options">
+      <button *ngIf="cancel"
+        class="option"
+        (click)="onCancelClick()"
+      >
+        Cancelar
+      </button>
+      <button *ngIf="accept"
+        class="option"
+        (click)="onAcceptClick()"
+      >
+        Aceptar
+      </button>
+    </div>
+  </div>
+</div>

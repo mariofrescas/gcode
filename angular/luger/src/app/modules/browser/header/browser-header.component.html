@@ -1,0 +1,56 @@
+<div class="browser-header">
+  <app-header
+    [textColor]="item.data.color.text"
+    [backgroundColor]="item.data.color.background"
+    [borderColor]="item.data.color.border"
+  ></app-header>
+  <div
+    class="header"
+    [style.color]="item.data.color.text"
+  >
+    <div *ngIf="mode === 'root'">
+      <button class="button">
+        <i class="material-icons">settings</i>
+      </button>
+    </div>
+
+    <div *ngIf="mode === 'navigation'">
+      <button class="button" (click)="onBackClick()">
+        <i class="material-icons">arrow_back</i>
+      </button>
+    </div>
+
+    <div *ngIf="mode === 'selection'">
+      <button class="button" (click)="onCancelSelectionClick()">
+        <i class="material-icons">close</i>
+      </button>
+    </div>
+
+    <div *ngIf="mode === 'root'"
+      (click)="onLugerClick()"
+    >
+      Luger
+    </div>
+
+    <div *ngIf="mode === 'navigation' || mode === 'selection'"
+      class="scroll-container scroll-container-center"
+      (click)="onTitleClick()"
+    >
+      <div class="scroll-content">
+        {{ item.data.description }}
+      </div>
+    </div>
+
+    <div *ngIf="mode === 'root' || mode === 'navigation'">
+      <button class="button" (click)="onAddClick()">
+        <i class="material-icons">add</i>
+      </button>
+    </div>
+
+    <div *ngIf="mode === 'selection'">
+      <button class="button" (click)="onOptionsSelectionClick()">
+        <i class="material-icons">more_vert</i>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="editor" *ngIf="editorService.state.item">
+  <app-editor-header
+    [item]="editorService.state.item"
+    (closeClick)="onCloseClick()"
+    (titleClick)="onTitleClick()"
+    (saveClick)="onSaveClick()"
+  ></app-editor-header>
+
+  <app-quill-editor
+    [item]="editorService.state.item"
+  ></app-quill-editor>
+</div>

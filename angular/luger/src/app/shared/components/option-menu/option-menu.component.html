@@ -1,0 +1,13 @@
+<div class="option-menu">
+  <app-backdrop (click)="close()"></app-backdrop>
+  <div class="menu-option-container">
+    <div
+      class="menu-option"
+      *ngFor="let option of data.options" 
+      (click)="onMenuOptionClicked(option)"
+    >
+      <i class="material-icons">{{ option.icon }}</i>
+      <div class="menu-option-text">{{ option.text }}</div>
+    </div>
+  </div>
+</div>

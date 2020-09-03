@@ -1,0 +1,21 @@
+<div class="color-picker">
+  <app-backdrop [style.z-index]="-1"
+    (click)="onCancelClick()"
+  ></app-backdrop>
+  <app-modal
+    [title]="'Cambiar color'"
+    [cancel]="true"
+    (cancelClick)="onCancelClick()"
+  >
+    <div *ngFor="let icolor of data.colors"
+      class="color"
+      [style.color]="icolor.text"
+      [style.background-color]="icolor.background"
+      [style.border-color]="icolor.border"
+      [style.box-shadow]="isSelectedColorCss(icolor)"
+      (click)="onColorClick(icolor)"
+    >
+    L
+    </div>
+  </app-modal>
+</div>

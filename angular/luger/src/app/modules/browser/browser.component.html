@@ -1,0 +1,23 @@
+<app-dynamic-holder></app-dynamic-holder>
+<div class="browser" *ngIf="browserService.state.item">
+  <app-browser-header
+    [item]="browserService.state.item"
+    [mode]="browserService.state.mode"
+    (backClick)="onBackClick()"
+    (cancelSelectionClick)="onCancelSelectionClick()"
+    (titleClick)="onTitleClick()"
+    (lugerClick)="onLugerClick()"
+    (addClick)="onAddClick()"
+    (optionsSelectionClick)="onOptionsSelectionClick()"
+  ></app-browser-header>
+
+  <app-tree-list
+    [items]="browserService.state.items"
+    [mode]="browserService.state.mode"
+    (itemsSort)="onItemsSort($event)"
+    (itemOptionsClick)="onItemOptionsClick($event)"
+    (itemClick)="onItemClick($event)"
+    (itemForwardClick)="onItemForwardClick($event)"
+    (itemSelectClick)="onItemSelectClick($event)"
+  ></app-tree-list>
+</div>

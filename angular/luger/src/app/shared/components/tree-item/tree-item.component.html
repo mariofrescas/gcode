@@ -1,0 +1,43 @@
+<div class="tree-item">
+  <div
+    class="color"
+    [style.border-color]="item.data.color.border"
+    [style.background-color]="item.data.color.background"
+    (click)="onOptionsClick()"
+  ></div>
+
+  <div
+    [className]="hasContentCss()"
+    (click)="onItemClick()"
+  >
+    <div class="scroll-content">
+      {{ item.data.description }}
+    </div>
+  </div>
+
+  <div class="child-count">
+    {{ item.data.children }}
+  </div>
+
+  <button *ngIf="mode !== 'selection'"
+    (click)="onForwardClick()"
+  >
+    <i class="material-icons">keyboard_arrow_right</i>
+  </button>
+
+  <button *ngIf="mode === 'selection'"
+    (click)="onSelectClick()"
+  >
+    <i *ngIf="!item.data.selected"
+      class="material-icons"
+    >
+      check_box_outline_blank
+    </i>
+
+    <i *ngIf="item.data.selected"
+      class="material-icons"
+    >
+      check_box
+    </i>
+  </button>
+</div>

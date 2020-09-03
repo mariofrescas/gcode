@@ -1,0 +1,28 @@
+<div class="editor-header">
+  <app-header
+    [textColor]="item.data.color.text"
+    [backgroundColor]="item.data.color.background"
+    [borderColor]="item.data.color.border"
+  ></app-header>
+  <div
+    class="header"
+    [style.color]="item.data.color.text"
+  >
+    <button class="button" (click)="onCloseClick()">
+      <i class="material-icons">close</i>
+    </button>
+
+    <div
+      class="scroll-container scroll-container-center"
+      (click)="onDescriptionClick()"
+    >
+      <div class="scroll-content">
+        {{ item.data.description }}
+      </div>
+    </div>
+
+    <button class="button" (click)="onSaveClick()">
+      <i class="material-icons">done</i>
+    </button>
+  </div>
+</div>

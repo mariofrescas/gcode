@@ -1,0 +1,14 @@
+<div class="confirm">
+  <app-backdrop [style.z-index]="-1"
+    (click)="onCancelClick()"
+  ></app-backdrop>
+  <app-modal
+    [title]="data.modal.title"
+    [accept]="true"
+    [cancel]="true"
+    (acceptClick)="onAcceptClick()"
+    (cancelClick)="onCancelClick()"
+  >
+    <label>{{ data.modal.content }}</label>
+  </app-modal>
+</div>

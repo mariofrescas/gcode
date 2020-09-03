@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/fonts/roboto/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('assets/fonts/material-icons/MaterialIcons-Regular.eot'); /* For IE6-8 */
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url('assets/fonts/material-icons/MaterialIcons-Regular.woff2') format('woff2'),
+    url('assets/fonts/material-icons/MaterialIcons-Regular.woff') format('woff'),
+    url('assets/fonts/material-icons/MaterialIcons-Regular.ttf') format('truetype');
+}
+
+:root {
+  --text-color-general: #4b4b4b;
+  --focus-color: #0081ff;
+}
+
+* {
+  font-family: 'Roboto', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  -webkit-user-select: none;
+}
+
+label {
+  color: var(--text-color-general);
+}
+
+input {
+  outline: none;
+  margin: 5px;
+  padding: 3px;
+  border: 1px solid rgba(50, 98, 168, 0.3);
+  border-radius: 5px;
+  background-color: aliceblue;
+}
+
+input:focus {
+  box-shadow: 0 0 5px 0px var(--focus-color);
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+
+.scroll-container, .scroll-container-center {
+  display: flex;
+  flex-grow: 2;
+  flex-basis: 0;
+  overflow: auto;
+}
+
+.scroll-container-center::after,
+.scroll-container-center::before {
+  content: '';
+  flex: 1;
+}
+
+.scroll-content {
+  flex-shrink: 0;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.ql-container {
+  border: 0 !important;
+}
+
+.ql-snow .ql-picker.ql-expanded .ql-picker-options {
+  position: fixed !important;
+  top: unset !important;
+  left: 5px !important;
+  bottom: 5px !important;
+  z-index: 10 !important;
+}

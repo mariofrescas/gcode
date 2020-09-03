@@ -1,0 +1,15 @@
+<div class="input">
+  <app-backdrop [style.z-index]="-1"
+    (click)="onCancelClick()"
+  ></app-backdrop>
+  <app-modal
+    [title]="data.modal.title"
+    [accept]="true"
+    [cancel]="true"
+    (acceptClick)="onAcceptClick()"
+    (cancelClick)="onCancelClick()"
+  >
+    <label for="name">{{ data.modal.content }}</label>
+    <input appAutofocus [(ngModel)]="data.description" id="name" type="text">
+  </app-modal>
+</div>

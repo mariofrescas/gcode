@@ -1,0 +1,26 @@
+<div class="tree-list">
+  <div class="luger-logo-container">
+    <img *ngIf="!items || (items && items.length < 1)"
+      src="assets/images/luger-logo.png"
+      class="luger-logo"
+      width="80px"
+      height="80px"
+    >
+  </div>
+  <div
+    class="tree-list-container"
+    appSortable
+    [sortableData]="items"
+    (sortableStop)="onItemsSort($event)"
+  >
+    <app-tree-item *ngFor="let item of items"
+      [item]="item"
+      [mode]="mode"
+      (optionsClick)="onItemOptionsClick(item)"
+      (itemClick)="onItemClick(item)"
+      (forwardClick)="onItemForwardClick(item)"
+      (selectClick)="onItemSelectClick(item)"
+    >
+    </app-tree-item>
+  </div>
+</div>
