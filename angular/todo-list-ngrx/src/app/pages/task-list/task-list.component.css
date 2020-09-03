@@ -1,0 +1,34 @@
+.task-list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.up {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+}
+
+.list-container {
+  height: 0;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.bottom-left {
+  flex: 1;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.bottom-right {
+  margin-right: 25px;
+}

@@ -1,0 +1,33 @@
+<div class="task-list">
+  <div class="up">
+    <mat-toolbar color="primary">
+      <span>TaskList App</span>
+    </mat-toolbar>
+    <mat-selection-list class="list-container">
+      <mat-list-option
+        *ngFor="let task of taskList | async"
+      >
+      {{ task.description }}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+  <div class="bottom">
+    <mat-form-field class="bottom-left">
+      <mat-label>Nueva tarea</mat-label>
+      <input
+        matInput
+        name="newTaskInput"
+        [(ngModel)]="newTaskInput"
+        placeholder="Nombre de la tarea nueva"
+      >
+    </mat-form-field>
+    <button
+      mat-raised-button
+      class="bottom-right"
+      color="primary"
+      (click)="onAddButton()"
+    >
+      Agregar
+    </button>
+  </div>
+</div>
