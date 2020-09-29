@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-void main() => runApp(App());
+void main() {
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    systemNavigationBarColor: Color(0xFF303E8B),
+    // statusBarColor: Color(0xFF303E8B)
+    statusBarColor: Color(0xFF3F51B5)
+  ));
+
+  runApp(App());
+}
 
 class App extends StatelessWidget {
   @override
@@ -27,6 +36,11 @@ class Home extends StatelessWidget {
         title: Container(
           height: kToolbarHeight,
           decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                blurRadius: 5
+              )
+            ],
             color: Color(0xFF3F51B5),
             borderRadius: BorderRadius.vertical(bottom: Radius.circular(20))
           ),
