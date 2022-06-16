@@ -2,8 +2,8 @@
   "type": "postgres",
   "host": "localhost",
   "port": 5432,
-  "username": "postgres",
-  "password": "",
+  "username": "postgresuser",
+  "password": "postgrespw",
   "database": "todos",
   "entities": ["dist/**/*.entity{.ts,.js}"],
   "synchronize": true
