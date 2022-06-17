@@ -1,11 +1,12 @@
 import { Controller } from '@nestjs/common';
 
-import { Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
+import { Get, Post, Put, Delete, Body, Param, UseGuards } from '@nestjs/common';
 
 import { TodoEntity } from './todo.entity';
 import { CreateTodoDto } from './create-todo.dto';
 import { UpdateTodoDto } from './update-todo.dto';
 import { TodosService } from './todos.service';
+import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 
 @Controller('/todos')
 export class TodosController {
@@ -14,6 +15,7 @@ export class TodosController {
   ) {}
 
   @Get()
+  @UseGuards(JwtAuthGuard)
   public findAll(): Promise<TodoEntity[]> {
     return this.todosService.findAll();
   }
